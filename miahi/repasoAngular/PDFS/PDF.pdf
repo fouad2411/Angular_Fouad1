@@ -1,0 +1,184 @@
+**Implementación de Carga Perezosa en Angular para la Web Huerto**
+
+La carga perezosa en Angular permite mejorar el rendimiento de la aplicación al dividir el código en módulos y cargarlos solo cuando se necesitan. En este documento, explicamos cómo implementar la carga diferida en la web **Huerto**, que contiene dos categorías principales: **Frutal** y **Hortaliza**.
+
+---
+
+## 1. Creación del Proyecto con Routing
+
+Para comenzar, creamos un nuevo proyecto en Angular asegurándonos de habilitar el sistema de rutas:
+```sh
+ng new huerto --routing
+cd huerto
+```
+
+---
+
+## 2. Creación de Módulos con Routing
+
+Dividimos la aplicación en dos módulos: **Frutal** y **Hortaliza**.
+```sh
+ng generate module frutal --routing
+ng generate module hortaliza --routing
+```
+
+Esto generará las carpetas `frutal` y `hortaliza`, cada una con su respectivo módulo y archivo de enrutamiento.
+
+---
+
+## 3. Creación de Componentes dentro de los Módulos Correspondientes
+
+Creamos los componentes para cada tipo de producto en sus respectivos módulos:
+```sh
+ng g c hortaliza -m app.module.ts
+ng g c hortaliza/tomate -m hortaliza/hortaliza.module.ts
+ng g c hortaliza/patata -m hortaliza/hortaliza.module.ts
+ng g c hortaliza/pimiento -m hortaliza/hortaliza.module.ts
+```
+
+Cada componente se alojará dentro de su módulo correspondiente.
+
+---
+
+## 4. Configuración de las Rutas en `app-routing.module.ts`
+
+Para implementar la carga perezosa, debemos modificar el archivo `app-routing.module.ts` y configurar las rutas:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'hortaliza',
+    loadChildren: () => import('./hortaliza/hortaliza.module').then(m => m.HortalizaModule)
+  },
+  {
+    path: 'frutal',
+    loadChildren: () => import('./frutal/frutal.module').then(m => m.FrutalModule)
+  },
+  { path: '', redirectTo: '/hortaliza', pathMatch: 'full' }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+```
+
+---
+
+## 5. Modificación del Componente Principal `app.component.html`
+
+Para incluir los enlaces a las diferentes secciones, modificamos el archivo `app.component.html`:
+
+```html
+<nav>
+  <a routerLink="/hortaliza">Hortaliza</a>
+  <a routerLink="/frutal">Frutal</a>
+</nav>
+<router-outlet></router-outlet>
+```
+
+El `router-outlet` es esencial para mostrar los componentes cargados dinámicamente.
+
+---
+
+## 6. Configuración de las Rutas en `hortaliza-routing.module.ts`
+
+Dentro del módulo de **Hortaliza**, debemos definir las rutas para sus componentes:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HortalizaComponent } from './hortaliza.component';
+import { TomateComponent } from './tomate/tomate.component';
+import { PatataComponent } from './patata/patata.component';
+import { PimientoComponent } from './pimiento/pimiento.component';
+
+const routes: Routes = [
+  { path: '', component: HortalizaComponent, children: [
+      { path: 'tomate', component: TomateComponent },
+      { path: 'patata', component: PatataComponent },
+      { path: 'pimiento', component: PimientoComponent }
+  ]}
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HortalizaRoutingModule {}
+```
+
+---
+
+## 7. Agregar Enlaces de Navegación en `hortaliza.component.html`
+
+Una vez seleccionada la ruta `hortaliza`, se mostrará el componente `HortalizaComponent`. Debemos agregar los enlaces a sus productos:
+
+```html
+<h2>Hortalizas</h2>
+<nav>
+  <a routerLink="tomate">Tomate</a>
+  <a routerLink="patata">Patata</a>
+  <a routerLink="pimiento">Pimiento</a>
+</nav>
+<router-outlet></router-outlet>
+```
+
+Esto permitirá la navegación dentro del módulo **Hortaliza** sin recargar toda la aplicación.
+
+---
+
+## **Conclusión**
+
+Con esta implementación, la aplicación **Huerto** utiliza carga diferida para mejorar el rendimiento, cargando cada módulo solo cuando es necesario. Además, la navegación es fluida y modular, permitiendo futuras expansiones con nuevas categorías de productos sin afectar el rendimiento global.
+
+
+comando que e usado para el ejercicio de repaso espoler no van del todo bien alguno sobra o falta
+ng generate module andalucia --routing
+ng generate module extremadura --routing
+ng generate module castillaleon --routing
+
+
+ng g c andalucia -m app.module.ts
+ng g c andalucia/huelva -m andalucia/andalucia.module.ts
+ng g c andalucia/sevilla -m andalucia/andalucia.module.ts
+ng g c andalucia/cadiz -m andalucia/andalucia.module.ts
+
+ng g c extremadura -m app.module.ts
+ng g c extremadura/caceres -m extremadura/extremadura.module.ts
+ng g c extremadura/badajoz -m extremadura/extremadura.module.ts
+
+ng g c castillaleon -m app.module.ts
+ng g c castillaleon/salamanca -m castillaleon/castillaleon.module.ts
+ng g c castillaleon/avila -m castillaleon/castillaleon.module.ts
+ng g c castillaleon/valladolid -m castillaleon/castillaleon.module.ts
+ng g c andalucia/huelva/aracena -m andalucia/andalucia.module.ts
+ng g c andalucia/huelva/moguer -m andalucia/andalucia.module.ts
+
+ng g c andalucia/sevilla/coria -m andalucia/andalucia.module.ts
+ng g c andalucia/sevilla/camas -m andalucia/andalucia.module.ts
+
+ng g c andalucia/cadiz/puerto -m andalucia/andalucia.module.ts
+ng g c andalucia/cadiz/jerez -m andalucia/andalucia.module.ts
+
+ng g c extremadura/badajoz/villanueva -m extremadura/extremadura.module.ts
+ng g c extremadura/badajoz/zafra -m extremadura/extremadura.module.ts
+
+ng g c extremadura/caceres/coria -m extremadura/extremadura.module.ts
+ng g c extremadura/caceres/moraleja -m extremadura/extremadura.module.ts
+
+ng g c castillaleon/salamanca/bejar -m castillaleon/castillaleon.module.ts
+ng g c castillaleon/salamanca/penaranda -m castillaleon/castillaleon.module.ts
+
+ng g c castillaleon/avila/piedrahita -m castillaleon/castillaleon.module.ts
+ng g c castillaleon/avila/hoyos -m castillaleon/castillaleon.module.ts
+
+ng g c castillaleon/valladolid/duenas -m castillaleon/castillaleon.module.ts
+ng g c castillaleon/valladolid/arroyo -m castillaleon/castillaleon.module.ts
+
+
+ng generate module andalucia/cadiz --routing

@@ -1,0 +1,22 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Fecha</th>
+      <th>Mensaje</th>
+      <th>Activo</th>
+      <th>Destinatario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mensaje of mensajes">
+      <td>{{ mensaje.id }}</td>
+      <td>{{ mensaje.usuario }}</td>
+      <td>{{ mensaje.fecha }}</td>
+      <td>{{ mensaje.mensaje }}</td>
+      <td>{{ mensaje.activo ? 'Sí' : 'No' }}</td>
+      <td>{{ mensaje.destinatario }}</td>
+    </tr>
+  </tbody>
+</table>

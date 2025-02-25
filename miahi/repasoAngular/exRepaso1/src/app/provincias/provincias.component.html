@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Provincia</th>
+      <th>Votos PA</th>
+      <th>Votos PB</th>
+      <th>Votos PC</th>
+      <th>Votos PD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of provincias">
+      <td>{{ p.nombreProvincia }}</td>
+      <td>{{ p.votosPA }}</td>
+      <td>{{ p.votosPB }}</td>
+      <td>{{ p.votosPC }}</td>
+      <td>{{ p.votosPD }}</td>
+    </tr>
+  </tbody>
+</table>
