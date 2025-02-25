@@ -1,0 +1,22 @@
+<h1>Provincia</h1>
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <th> Provincia</th>
+      <th>Situacion ALT MAX</th>
+      <th>Altura Maxima</th>
+      <th>Situacion ALT MIn</th>
+      <th>Altura Minima</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of listadoAlturas">
+        <td>{{l.nombre}}</td>
+        <td>{{l.situacionAltMax}}</td>
+        <td>{{l.alturaMaxima}}</td>
+        <td>{{l.situacionAltMin}}</td>
+        <td>{{l.alturaMinima}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

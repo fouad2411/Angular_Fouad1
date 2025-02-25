@@ -1,0 +1,25 @@
+<h1>Provincia</h1>
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <th>Nombre Provincia</th>
+      <th>PA</th>
+      <th>PB</th>
+      <th>PC</th>
+      <th>PD</th>
+      <th>Representantes</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of listadoProvincia">
+        <td>{{l.nombreProvincia}}</td>
+        <td>{{l.votosPA}}</td>
+        <td>{{l.votosPB}}</td>
+        <td>{{l.votosPC}}</td>
+        <td>{{l.votosPD}}</td>
+        <td>{{l.Representantes}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
