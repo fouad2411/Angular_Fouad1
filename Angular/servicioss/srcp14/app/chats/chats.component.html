@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container text-center">
+<h1> Servidor2- CHAT</h1>
+
+  <form #f="ngForm" action="">
+    <label for=""> Usuario </label>
+    <input type="text" name="usuario" [(ngModel)]="mensajeSeleccionado.usuario">
+<br><br>
+    <label for=""> Mensaje </label>
+    <input type="text" name="mensaje" [(ngModel)]="mensajeSeleccionado.mensaje">
+    <label for="">Borrar Mensaje Por id</label>
+    <input type="text" name="borrar" >
+    <p>
+      <br>
+      <button (click)="leerMensajes()"  class="btn btn-primary"> Leer mensaje</button>
+     <button (click)="insertarMensaje(f)" class="btn btn-secondary"> Insertar Mensaje</button>
+     <button (click)="limpiarMensajes()">Hacer Limpieaza</button>
+    </p>
+
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+           <th>ID</th>
+        <th>Hora/Fecha</th>
+          <th>Usuario</th>
+          <th>Mensaje</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor=" let m of listaMensajes">
+          <td>{{m.id}}</td>
+          <td>{{m.fecha}}</td>
+          <td>{{m.usuario}}</td>
+          <td>{{m.mensaje}}</td>
+          <td><button name="borrar" (click)="borrarMensaje(m.id)">Borrar Mensaje</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+</div>
+</body>
+</html>

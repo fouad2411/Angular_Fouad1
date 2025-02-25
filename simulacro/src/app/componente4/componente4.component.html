@@ -1,0 +1,12 @@
+<div class="container">
+
+  <button (click)="aniadir()">Añadir</button>
+  <input type="text" class="form-control" [(ngModel)]="nombre">
+
+  <ul>
+    <li *ngFor="let nombre of nombres">
+      {{nombre}}
+    </li>
+  </ul>
+
+</div>

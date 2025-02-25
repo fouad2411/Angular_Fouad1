@@ -1,0 +1,21 @@
+<div class="container">
+  <button class="btn btn-primary" (click)="aniarNumero()">añadir</button>
+    <table class="table">
+      <thead>
+        <th>#</th>
+        <th>numero</th>
+        <th>acciones</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of lista;index as i">
+          <td> {{i}}</td>
+          <td>{{x}}</td>
+          <td>
+             <input type="number"  >
+            <button (click)="modificar(i)">Modificar</button>
+            <button (click)="eliminar(i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
