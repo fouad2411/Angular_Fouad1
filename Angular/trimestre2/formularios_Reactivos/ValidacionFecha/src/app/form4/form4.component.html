@@ -1,0 +1,66 @@
+<h1 style="text-align: center;">Validacion de tarjetas bancarias</h1>
+<form [formGroup]="FRegistro">
+
+<div>
+  <label for="">Visa</label>
+  <input type="number" formControlName="visa">
+  <mat-error *ngIf="FRegistro.get('visa')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('visa')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+</div>
+<div>
+  <label for="">Mastercard</label>
+  <input type="number" formControlName="mastercard">
+  <mat-error *ngIf="FRegistro.get('mastercard')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('mastercard')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+</div>
+<div>
+  <label for="">american</label>
+  <input type="number" formControlName="american">
+  <mat-error *ngIf="FRegistro.get('american')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('american')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+</div>
+<div>
+  <label for="">discover</label>
+  <input type="number" formControlName="discover">
+  <mat-error *ngIf="FRegistro.get('discover')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('discover')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+</div>
+<div>
+  <label for="">diners</label>
+  <input type="number" formControlName="diners">
+  <mat-error *ngIf="FRegistro.get('diners')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('diners')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+</div>
+<!--<div>
+  <label for="">JCB</label>
+  <input type="number" formControlName="jcb">
+  <mat-error *ngIf="FRegistro.get('jcb')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('jcb')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+</div>-->
+<button (click)="comprobar()" type="submit" [disabled]="FRegistro.invalid"> Validar</button>
+
+</form>

@@ -1,0 +1,74 @@
+<h1 style="text-align: center;">Validación de tarjetas bancarias</h1>
+
+<form [formGroup]="FRegistro">
+<mat-form-field appearance="fill">
+  <input matInput formControlName="letras" placeholder="solo letras">
+  <mat-error *ngIf="FRegistro.get('letras')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('letras')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <input matInput formControlName="numeros" placeholder="solo numeros">
+  <mat-error *ngIf="FRegistro.get('numeros')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('numeros')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+
+</mat-form-field>
+
+
+<mat-form-field appearance="fill">
+  <input matInput formControlName="mayuscula" placeholder="solo mayuscula">
+  <mat-error *ngIf="FRegistro.get('mayuscula')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('mayuscula')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <input type="number" matInput formControlName="rangoNumerico" placeholder="Número entre 100 y 200">
+  <mat-error *ngIf="FRegistro.get('rangoNumerico')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('rangoNumerico')?.hasError('min')">
+    Cumplir formato
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('rangoNumerico')?.hasError('max')">
+    Cumplir formato
+  </mat-error>
+
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <input matInput formControlName="cincoNumeros" placeholder="5 numeros">
+  <mat-error *ngIf="FRegistro.get('cincoNumeros')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('cincoNumeros')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <input  matInput formControlName="diezLetras" placeholder="10 letras">
+  <mat-error *ngIf="FRegistro.get('diezLetras')?.hasError('required')">
+    El campo es obligatorio
+  </mat-error>
+  <mat-error *ngIf="FRegistro.get('diezLetras')?.hasError('pattern')">
+    Cumplir formato
+  </mat-error>
+
+</mat-form-field>
+</form>
+<button (click)="comprobar()" type="submit" [disabled]="FRegistro.invalid"> Validar</button>

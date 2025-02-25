@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <h2 style="text-align: center">{{ title }}</h2>
+
+    <input type="number" name="num1" id="num1" placeholder="Ingrese el primer numero" [(ngModel)]="num1" />
+
+    <input type="number" name="num2" id="num2" placeholder="Ingrese el segundo numero" [(ngModel)]="num2" />
+
+    <div class="row">
+      <button class="btn btn-info" (click)="sumar()">Sumar</button>
+      <button class="btn btn-info" (click)="restar()">Restar</button>
+      <button class="btn btn-info" (click)="multiplicar()">Multiplicar</button>
+      <button class="btn btn-info" (click)="dividir()">Dividir</button>
+    </div>
+
+    <p style="text-align: center">Resultado: {{ resultado }}</p>
+  </div>
+</div>

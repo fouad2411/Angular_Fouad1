@@ -1,0 +1,39 @@
+<div class="container padre" >
+
+  <h2>Comunicación Padre - Hijo 1</h2>
+  <span> Mensaje de Padre a Hijo1</span>
+  <input type="text" [(ngModel)]="mensajeParaHijo1">
+  <p>
+    Hijo 1 dice a padre: {{mensajeDeHijo1}}
+  </p>
+  <p>
+    Mensaje de Hijo1 a padre: {{mensajeDeHijo1}}
+  </p>
+
+  <p>Peticiones de Hijo 1 Random a padre: {{peticionesHijo1}}</p>
+  <button (click)="enviarPeticionesAlHijo1()">Peticiones Al Hijo</button>
+
+  <app-hijo1 [mensajeDeEntradaParaHijo1]="mensajeParaHijo1"
+  [peticionesDeEntradaHijo1]="peticionesDelPadre1"
+  (mensajeDeSalidaPadreHijo1)="actualizarmensajeDehijo1($event)"
+  (nPeticiones)="actualizarNumeroPeticiones1($event)">
+
+  <p>Peticiones de Hijo 1 Random a Padre:{{peticionesHijo1}} </p>
+
+</app-hijo1>
+
+<span> Comunicación de Padre a HIJO2 </span>
+<input type="text" [(ngModel)]="mensajeParaHijo2">
+
+<p>
+  Mensaje de Hijo2 a padre: {{mensajeDeHijo2}}
+
+</p>
+<p>Peticiones de Hijo 1 Random a Padre: {{peticionesHijo2}}</p>
+
+  <app-hijo2 [mensajeDeEntradaHijo2]="mensajeParaHijo2"
+  (mensajeDeSalidaPadreHijo1)="actualizarMensajeDehijo2($event)">
+
+  </app-hijo2>
+
+</div>

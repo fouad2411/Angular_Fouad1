@@ -1,0 +1,8 @@
+<h1>Lombarda de Colores</h1>
+<h3>Suma 1 punto si coindice el nombre del color y el background </h3>
+
+{{puntuacion}}
+<div  [ngStyle]="{ 'background-color': color}" (click)="sumarPuntos()" style="width: 200px; height: 200px;">
+  'background-color': {{nombre}}
+</div>
+<button (click)="empezar()">Reanudar</button>

@@ -1,0 +1,59 @@
+<form [formGroup]="g1">
+
+  <div>
+    <label for="">Nombre</label>
+    <input type="text" formControlName="nombre">
+    <mat-error *ngIf="g1.get('nombre')?.hasError('required')">
+      El campo es obligatorio
+    </mat-error>
+    <mat-error *ngIf="g1.get('nombre')?.hasError('maxlength')">
+      Cumplir formato
+    </mat-error>
+  </div>
+  <div>
+    <label for="">Correo</label>
+    <input type="text" formControlName="correo">
+    <mat-error *ngIf="g1.get('correo')?.hasError('required')">
+      El campo es obligatorio
+    </mat-error>
+    <mat-error *ngIf="g1.get('correo')?.hasError('pattern')">
+      Cumplir formato
+    </mat-error>
+  </div>
+  <div>
+    <label for="">Mayor de edad</label>
+    <input type="number" formControlName="edad">
+    <mat-error *ngIf="g1.get('edad')?.hasError('required')">
+      El campo es obligatorio
+    </mat-error>
+    <mat-error *ngIf="g1.get('edad')?.hasError('pattern')">
+      Cumplir formato
+    </mat-error>
+  </div>
+  <div>
+    <label>Trabajo</label>
+    <select matNativeControl required formControlName="cargo">
+      <option >junior</option>
+      <option >senior</option>
+      <option >leader</option>
+    </select>
+    <mat-error *ngIf="g1.get('cargo')?.hasError('required')">
+      El campo es obligatorio
+    </mat-error>
+  </div>
+  <div>
+    <label for="">Salario</label>
+    <input type="number" formControlName="salario">
+    <mat-error *ngIf="g1.get('salario')?.hasError('required')">
+      El campo es obligatorio
+    </mat-error>
+    <mat-error *ngIf="g1.get('salario')?.hasError('min')">
+      Cumplir formato
+    </mat-error>
+    <mat-error *ngIf="g1.get('salario')?.hasError('max')">
+      Cumplir formato
+    </mat-error>
+  </div>
+  <button (click)="comprobar()" type="submit" [disabled]="g1.invalid"> Validar</button>
+
+</form>

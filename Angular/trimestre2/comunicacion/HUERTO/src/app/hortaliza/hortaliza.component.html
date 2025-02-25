@@ -1,0 +1,13 @@
+<div id="fruta">
+  <h2>hortaliza</h2>
+
+  <input
+    [(ngModel)]="mensajeParaHuerto"
+    (keyup)="enviaMensajeH()"
+    placeholder="Escribe un mensaje para el huerto"
+  />
+
+  <button (click)="enviarSemillas()">Mandar Plantones</button>
+
+  <p>El Huerto dice: {{ mensajeDeEntradaHortaliza }}</p>
+</div>

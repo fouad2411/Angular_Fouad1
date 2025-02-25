@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="row d-flex align-items-center bd-highlight mb-3 mt-5 flexbox ml-5">
+        <div class="col-lg-4 ">
+            <form action="http://moralo.atwebpages.com/loterias/insertar2.php" method="post" id="cargar">
+                <div class="form-group">
+                    <label for="">Numero 1</label>
+                    <input type="text" name="n1" id="n1" class="form-control" placeholder="mayor que 0 y menos que 100" aria-describedby="helpId">
+                    <small id="smn1" class="text-danger"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt1">Introduce texto</label>
+                    <input type="text" name="txt1" id="txt1" class="form-control" placeholder="mínimo 3 caracteres y máximo 15 caracteres" aria-describedby="helpId">
+                    <small id="smtxt1" class="text-danger"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="n2">Numero 2</label>
+                    <input type="text" name="n2" id="n2" class="form-control" placeholder="número comprendido entre -10 y +10." aria-describedby="helpId">
+                    <small id="smn2" class="text-danger"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2">Texto 2</label>
+                    <input type="text" name="txt2" id="txt2" class="form-control" placeholder="tiene que aparecer obligatoriamente las letras a , e , o en cualquier posición." aria-describedby="helpId">
+                    <small id="smtxt2" class="text-danger"></small>
+                </div>
+            
+        </div>
+
+        <!-- Checkbox y radio en sus propias columnas -->
+        <div class="col-lg-4">
+            <div class="form-check">
+                <h1 class="mt-4 mb-3">Modulos</h1>
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="modulos" id="dam" value="dam" >
+                    DAM
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="modulos" id="daw" value="daw" >
+                    DAW
+                </label>
+            </div>
+            <small id="smModulos" class="text-danger"></small>
+        </div>
+
+        <!-- Columna para el radio button -->
+        <div class="col-lg-4">
+            <h1 class="mt-4 mb-3">Asignaturas</h1>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="radio" id="dec" value="dec" >
+                    dec
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="radio" id="diw" value="diw" >
+                    diw
+                </label>
+                <small id="smasig" class="text-danger"></small>
+            </div>
+        </div>
+        <br><br><input type="submit" id="aceptar" value="Aceptar">
+
+    </form>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+     <script src="app.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" int

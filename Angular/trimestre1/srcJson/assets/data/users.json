@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "first_name": "Gorden",
+    "last_name": "Brahams",
+    "email": "gbrahams0@godaddy.com",
+    "gender": "Male"
+  },
+  {
+    "id": 2,
+    "first_name": "Gratiana",
+    "last_name": "Clitherow",
+    "email": "gclitherow1@abc.net.au",
+    "gender": "Female"
+  },
+  {
+    "id": 3,
+    "first_name": "Scott",
+    "last_name": "Gentry",
+    "email": "sgentry2@amazonaws.com",
+    "gender": "Male"
+  },
+  {
+    "id": 4,
+    "first_name": "Tarra",
+    "last_name": "Kivelhan",
+    "email": "tkivelhan3@cpanel.net",
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "first_name": "Petra",
+    "last_name": "Devas",
+    "email": "pdevas4@twitter.com",
+    "gender": "Female"
+  },
+  {
+    "id": 6,
+    "first_name": "Arte",
+    "last_name": "Airs",
+    "email": "aairs5@lulu.com",
+    "gender": "Male"
+  },
+  {
+    "id": 7,
+    "first_name": "Currie",
+    "last_name": "Pilgrim",
+    "email": "cpilgrim6@usatoday.com",
+    "gender": "Male"
+  },
+  {
+    "id": 8,
+    "first_name": "Marji",
+    "last_name": "Bonny",
+    "email": "mbonny7@vistaprint.com",
+    "gender": "Female"
+  },
+  {
+    "id": 9,
+    "first_name": "Gavra",
+    "last_name": "Cast",
+    "email": "gcast8@cbsnews.com",
+    "gender": "Female"
+  },
+  {
+    "id": 10,
+    "first_name": "Rabbi",
+    "last_name": "Chisholm",
+    "email": "rchisholm9@wikispaces.com",
+    "gender": "Male"
+  },
+  {
+    "id": 11,
+    "first_name": "Sylvan",
+    "last_name": "Joincey",
+    "email": "sjoinceya@ocn.ne.jp",
+    "gender": "Male"
+  },
+  {
+    "id": 12,
+    "first_name": "Jule",
+    "last_name": "Dilawey",
+    "email": "jdilaweyb@ed.gov",
+    "gender": "Male"
+  },
+  {
+    "id": 13,
+    "first_name": "Sarge",
+    "last_name": "Bowne",
+    "email": "sbownec@walmart.com",
+    "gender": "Male"
+  },
+  {
+    "id": 14,
+    "first_name": "Augy",
+    "last_name": "Klamman",
+    "email": "aklammand@microsoft.com",
+    "gender": "Male"
+  },
+  {
+    "id": 15,
+    "first_name": "Obadias",
+    "last_name": "Wynrehame",
+    "email": "owynrehamee@jiathis.com",
+    "gender": "Genderfluid"
+  },
+  {
+    "id": 16,
+    "first_name": "Alikee",
+    "last_name": "Halbeard",
+    "email": "ahalbeardf@amazon.co.uk",
+    "gender": "Bigender"
+  },
+  {
+    "id": 17,
+    "first_name": "Nevin",
+    "last_name": "Helks",
+    "email": "nhelksg@vinaora.com",
+    "gender": "Male"
+  },
+  {
+    "id": 18,
+    "first_name": "Kristopher",
+    "last_name": "Shillabeare",
+    "email": "kshillabeareh@nih.gov",
+    "gender": "Male"
+  },
+  {
+    "id": 19,
+    "first_name": "Gilligan",
+    "last_name": "O'Nowlan",
+    "email": "gonowlani@meetup.com",
+    "gender": "Female"
+  },
+  {
+    "id": 20,
+    "first_name": "Pierrette",
+    "last_name": "Saddington",
+    "email": "psaddingtonj@instagram.com",
+    "gender": "Female"
+  }
+]

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <h1>Binding Angular</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">Segundos: {{ segundos }}</div>
+
+    <div class="col-lg-8" [ngStyle]="{ 'background-color': color, 'font-size': size }">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolores
+      excepturi cupiditate consequuntur in explicabo nihil tenetur facilis
+      obcaecati, distinctio nisi sequi voluptatem quae saepe voluptas impedit
+      nulla officia iure.
+    </div>
+  </div>
+
+  <button (click)="cambiarEstilos()" [disabled]="estado">
+    {{ estado ? "Boton desactivado" : "Boton activado" }}
+  </button>
+
+  <div class="row my-3">
+    <div class="col-lg-2">
+      <ul *ngFor="let persona of personas; let indice = index">
+        <li (mouseover)="verEdad(indice)" (mouseleave)="verNombrePersona()">
+          {{ indiceHover == indice ? persona.edad : persona.nombre }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-8">
+      <ul *ngFor="let periodico of periodicos; let indice = index">
+        <li (mouseover)="verEnlace(indice)" (mouseleave)="verNombrePeriodico()">
+          <a [href]="periodico.url">{{
+            indiceHoverPeriodico == indice ? periodico.url : periodico.nombre
+            }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

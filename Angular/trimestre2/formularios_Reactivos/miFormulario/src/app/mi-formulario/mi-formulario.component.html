@@ -1,0 +1,45 @@
+<form [formGroup]="miFormulario" (ngSubmit)="onSubmit()">
+  <!-- Campo Nombre -->
+  <div>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" type="text" formControlName="nombre" class="form-control" />
+    <div *ngIf="miFormulario.get('nombre')?.hasError('required') && miFormulario.get('nombre')?.touched" class="text-danger">
+      El nombre es obligatorio.
+    </div>
+    <div *ngIf="miFormulario.get('nombre')?.hasError('maxlength')" class="text-danger">
+      El nombre no puede tener más de 10 caracteres.
+    </div>
+  </div>
+
+  <!-- Campo Correo -->
+  <div>
+    <label for="correo">Correo</label>
+    <input id="correo" type="email" formControlName="correo" class="form-control" />
+    <div *ngIf="miFormulario.get('correo')?.hasError('required') && miFormulario.get('correo')?.touched" class="text-danger">
+      El correo es obligatorio.
+    </div>
+    <div *ngIf="miFormulario.get('correo')?.hasError('email')" class="text-danger">
+      El formato del correo es incorrecto.
+    </div>
+  </div>
+
+  <!-- Campo Contraseña -->
+  <div>
+    <label for="contraseña">Contraseña</label>
+    <input id="contraseña" type="password" formControlName="contraseña" class="form-control" />
+    <div *ngIf="miFormulario.get('contraseña')?.hasError('required') && miFormulario.get('contraseña')?.touched" class="text-danger">
+      La contraseña es obligatoria.
+    </div>
+    <div *ngIf="miFormulario.get('contraseña')?.hasError('minlength')" class="text-danger">
+      La contraseña debe tener al menos 6 caracteres.
+    </div>
+  </div>
+
+  <!-- Botón de Enviar -->
+  <button type="submit" class="btn btn-primary" [disabled]="!miFormulario.valid">Confirmar</button>
+
+  <!-- Mensaje de éxito -->
+  <div *ngIf="showAlert" class="alert alert-success">
+    <strong>Ok!</strong> Rellenado correctamente.
+  </div>
+</form>

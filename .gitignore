@@ -1,0 +1,6 @@
+# Angular
+/dist/
+/node_modules/
+/tmp/
+/out-tsc/
+/*.log

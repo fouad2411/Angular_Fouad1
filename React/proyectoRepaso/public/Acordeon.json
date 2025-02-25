@@ -1,0 +1,23 @@
+[
+    {
+      "pregunta": "¿Qué es Bootstrap?",
+      "respuesta": "Bootstrap es un framework de código abierto que facilita el desarrollo de interfaces web responsivas y móviles. Proporciona plantillas predefinidas, componentes y estilos CSS."
+    },
+    {
+      "pregunta": "¿Cómo se utiliza Bootstrap?",
+      "respuesta": "Bootstrap se puede integrar a través de un archivo CSS y JS incluidos en tu proyecto o mediante la descarga de los archivos desde su sitio web. También puedes usarlo a través de un CDN."
+    },
+    {
+      "pregunta": "¿Qué son los componentes de Bootstrap?",
+      "respuesta": "Los componentes de Bootstrap son elementos como botones, barras de navegación, formularios, alertas, etc., que puedes integrar fácilmente en tu proyecto para crear interfaces atractivas y funcionales."
+    },
+    {
+      "pregunta": "¿Es posible personalizar Bootstrap?",
+      "respuesta": "Sí, Bootstrap es altamente personalizable. Puedes modificar sus variables y personalizar los estilos para que se adapten a las necesidades de tu proyecto."
+    },
+    {
+      "pregunta": "¿Bootstrap es gratuito?",
+      "respuesta": "Sí, Bootstrap es completamente gratuito y de código abierto bajo la licencia MIT."
+    }
+  ]
+  

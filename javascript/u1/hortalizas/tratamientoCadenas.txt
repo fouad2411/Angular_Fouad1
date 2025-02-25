@@ -1,0 +1,41 @@
+charAt(indice)
+Devuelve el carácter que hay en la posición indicada como índice. Las posiciones de un string empiezan en 0.
+
+indexOf(carácter,desde)
+Devuelve la posición de la primera vez que aparece el carácter indicado por parámetro en un string. Si no encuentra el carácter en el string devuelve -1. El segundo parámetro es opcional y sirve para indicar a partir de que posición se desea que empiece la búsqueda.
+
+lastIndexOf(carácter,desde)
+Busca la posición de un carácter exáctamente igual a como lo hace la función indexOf pero desde el final en lugar del principio. El segundo parámetro indica el número de caracteres desde donde se busca, igual que en indexOf.
+
+replace(substring_a_buscar,nuevoStr)
+
+ 
+sirve para reemplazar porciones del texto de un string por otro texto,
+ por ejemplo, podríamos uilizarlo para reemplazar todas las apariciones del substring "xxx" por "yyy". 
+ El método no reemplaza en el string, sino que devuelve un resultante de hacer ese reemplazo. 
+ Acepta expresiones regulares como substring a buscar.
+
+ substring(inicio,fin)
+ toLowerCase()
+ toUpperCase()
+
+
+let txt1 = document.getElementById("txt1").value;
+let smTxt1 = document.getElementById("smtxt1");
+let avanzar = true;
+
+// Validación de longitud entre 5 y 15 caracteres
+if (txt1.length < 5 || txt1.length > 15) {
+    avanzar = false;
+    smTxt1.textContent = "El texto debe tener entre 5 y 15 caracteres.";
+} 
+// Validación de al menos una letra mayúscula, un número y que todo sea mayúscula
+else if (!/[A-Z]/.test(txt1) || !/\d/.test(txt1) || !/^[A-Z]+$/.test(txt1)) {
+    avanzar = false;
+    smTxt1.textContent = "El texto debe contener al menos una letra mayúscula, un número, y estar todo en mayúsculas.";
+} 
+else {
+    smTxt1.textContent = ""; // Si pasa todas las validaciones, limpia el mensaje de error
+}
+
+return avanzar;

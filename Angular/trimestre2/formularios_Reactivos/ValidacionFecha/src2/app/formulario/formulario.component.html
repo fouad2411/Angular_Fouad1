@@ -1,0 +1,77 @@
+<form [formGroup]="FRegistro" (ngSubmit)="comprobar()">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="col-lg-12">
+
+        <!-- Campo Email -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="micorreo@gmail.com">
+          <mat-error *ngIf="FRegistro.get('email')?.hasError('required')">
+            El correo es obligatorio
+          </mat-error>
+          <mat-error *ngIf="FRegistro.get('email')?.hasError('email')">
+            Teclea una cuenta de mail válida
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Campo Fecha de Cumpleaños -->
+        <mat-form-field>
+          <mat-label>Introduce tu cumpleaños</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="cumple">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="FRegistro.get('cumple')?.hasError('required')">
+            Introduce una fecha de cumpleaños
+          </mat-error>
+          <mat-error *ngIf="FRegistro.get('cumple')?.hasError('invalidDate')">
+            La fecha ingresada no es válida
+          </mat-error>
+          <mat-error *ngIf="FRegistro.get('cumple')?.hasError('futureDate')">
+            La fecha debe ser anterior a la fecha actual
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Campo Trabajo -->
+        <mat-form-field>
+          <mat-label>Trabajo</mat-label>
+          <select matNativeControl required formControlName="trabajo">
+            <option value="tester">Tester</option>
+            <option value="fullstack">Fullstack</option>
+            <option value="backend">Backend</option>
+            <option value="frontend">Frontend</option>
+          </select>
+          <mat-error *ngIf="FRegistro.get('trabajo')?.hasError('required')">
+            El campo Trabajo es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Campo Contraseña -->
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Introduce tu contraseña" required minlength="8">
+          <mat-error *ngIf="FRegistro.get('password')?.hasError('required')">
+            La contraseña es obligatoria
+          </mat-error>
+          <mat-error *ngIf="FRegistro.get('password')?.hasError('pattern')">
+            La contraseña debe tener al menos 8 caracteres, comenzar con mayúscula y terminar con un número
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Campo Repetir Contraseña -->
+        <mat-form-field appearance="fill">
+          <mat-label>Repite tu contraseña</mat-label>
+          <input matInput type="password" formControlName="repeatPassword" placeholder="Introduce tu contraseña" required minlength="8">
+          <mat-error *ngIf="FRegistro.get('repeatPassword')?.hasError('required')">
+            Las contraseñas no coinciden
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Botón de Submit -->
+        <button type="submit" [disabled]="FRegistro.invalid"> Validar</button>
+
+      </div>
+    </div>
+  </div>
+</form>

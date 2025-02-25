@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Empleado</h2>
+<div class="contenedorCuadroDialogo">
+  <mat-dialog-content>
+    <form>
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input
+          matInput
+          name="id"
+          placeholder="0"
+          type="number"
+          [(ngModel)]="data.id"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput name="nombre" [(ngModel)]="data.nombre" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Direccion</mat-label>
+        <input matInput name="direccion" [(ngModel)]="data.direccion" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Cargo</mat-label>
+        <input matInput name="cargo" [(ngModel)]="data.cargo" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Edad</mat-label>
+        <input matInput name="edad" type="number" [(ngModel)]="data.edad" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Imagen</mat-label>
+        <input matInput name="imagen" type="text" [(ngModel)]="data.imagen" />
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="Cancelar()">Cancelar</button>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="guardar()">
+      Confirmar
+    </button>
+  </mat-dialog-actions>
+</div>
